@@ -18,9 +18,8 @@ snippet br "break"
 	break
 snippet ch "channel"
 	chan ${0:int}
-snippet cs "case"
-	case ${1:value}:
-		${0:${VISUAL}}
+snippet cs "CompileStatic"
+	@CompileStatic
 snippet co "constants with iota"
 	const (
 		${1:NAME1} = iota
@@ -56,6 +55,8 @@ snippet ife "if else condition"
 	} else {
 		${0}
 	}
+snippet imt "import transform"
+	import groovy.transform.*
 snippet el "else"
 	else {
 		${0:${VISUAL}}
@@ -213,8 +214,13 @@ snippet bench "benchmark function"
 		}
 	}
 	${0}
-snippet cl "composite literals"
+snippet cl "class"
 	class ${1:Name} {
+		${2:${VISUAL}}
+	}
+snippet jcl "jenkins class"
+	@TupleConstructor
+	class ${1:Name} implements Serializable {
 		${2:${VISUAL}}
 	}
 snippet om "if key in a map"
