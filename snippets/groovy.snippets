@@ -1,50 +1,17 @@
-snippet v "shorthand variable declaration"
-	${1} := ${2}
-snippet vr "variable initialization"
-	var ${1:t} ${0:string}
-snippet var "variable declaration"
-	var ${1} ${2} = ${3}
-snippet vars "variables declaration"
-	var (
-		${1} ${2} = ${3}
-	)
-snippet ap "append"
-	append(${1:slice}, ${0:value})
-snippet bl "bool"
-	bool
+snippet bl "Boolean"
+	Boolean
 snippet bt "byte"
 	byte
 snippet br "break"
 	break
-snippet ch "channel"
-	chan ${0:int}
 snippet cs "CompileStatic"
 	@CompileStatic
 snippet tc "TupleConstructor"
 	@TupleConstructor
-snippet co "constants with iota"
-	const (
-		${1:NAME1} = iota
-		${0:NAME2}
-	)
 snippet cn "continue"
 	continue
-snippet df "defer"
-	defer ${0:func}()
-snippet dfr "defer recover"
-	defer func() {
-		if err := recover(); err != nil {
-			${0:${VISUAL}}
-		}
-	}()
 snippet else "else"
 	} else {
-snippet in "interface"
-	interface{}
-snippet inf "full interface "
-	interface ${1:name} {
-		${2:/* methods */}
-	}
 snippet if "if condition"
 	if (${1}) {
 		${2:${VISUAL}}
@@ -65,7 +32,6 @@ snippet eq ".equals"
 	boolean equals(${1:MyClass} other) {
 		${0:${VISUAL}}
 	}
-snippet f "false"
 snippet f "false"
 	false
 snippet fl "float"
@@ -127,32 +93,14 @@ snippet fumh "http handler function on receiver"
 	}
 snippet l "list"
 	List<${1:String}>
-snippet lf "log printf"
-	log.Printf("%${1:s}", ${2:var})
-snippet lp "log println"
-	log.Println("${1}")
-snippet mk "make"
-	make(${1:[]string}, ${0:0})
-snippet mp "map"
-	map[${1:string}]${0:int}
 snippet main "func main()"
 	static void main(String... args) {
 		${0:${VISUAL}}
 	}
 snippet nw "new"
-	new(${0:type})
+	new ${0:Class}(${1})
 snippet pa "package"
 	package ${1:main}
-snippet pn "panic"
-	panic("${0:msg}")
-snippet pf "fmt.Printf()"
-	fmt.Printf("%${1:s}\n", ${2:var})
-snippet pl "fmt.Println()"
-	fmt.Println("${1:s}")
-snippet pr "println"
-	println(${1:foo})
-snippet rn "range"
-	range ${0}
 snippet rt "return"
 	return ${0}
 snippet rs "result"
@@ -161,12 +109,12 @@ snippet sd "static def"
 	static def ${1:foo}(${2:String contents}) {
 		${0:${VISUAL}}
 	}
-snippet spd "static private def"
-	static private def ${1:foo}(${2:String contents}) {
+snippet spd "static protected def"
+	static protected def ${1:foo}(${2:String contents}) {
 		${0:${VISUAL}}
 	}
-snippet sr "string"
-	string
+snippet sr "String"
+	String
 snippet switch "switch"
 	switch (${1:var}) {
 	case ${2:value1}:
@@ -177,16 +125,8 @@ snippet switch "switch"
 		${0:${VISUAL}}
 		break;
 	}
-snippet ps "fmt.Sprintf"
-	fmt.Sprintf("%${1:s}", ${2:var})
 snippet t "true"
 	true
-snippet g "goroutine named function"
-	go ${1:funcName}(${0})
-snippet ga "goroutine anonymous function"
-	go func(${1} ${2:type}) {
-		${3:/* code */}
-	}(${0})
 snippet test "test function"
 	func Test${1:name}(t *testing.T) {
 		${0:${VISUAL}}
@@ -222,24 +162,4 @@ snippet jcl "jenkins class"
 	@TupleConstructor
 	class ${1:Name} {
 		${2:${VISUAL}}
-	}
-snippet om "if key in a map"
-	if ${1:value}, ok := ${2:map}[${3:key}]; ok == true {
-		${4:/* code */}
-	}
-snippet gg "Grouped globals with anonymous struct"
-	var ${1:var} = struct{
-		${2:name} ${3:type}
-	}{
-		$2: ${4:value},
-	}
-snippet ja "Marshalable json alias"
-	type ${1:parentType}Alias $1
-
-	func (p *$1) MarshalJSON() ([]byte, error) {
-		return json.Marshal(&struct{ *$1Alias }{(*$1Alias)(p)})
-	}
-snippet errwr "Error handling with errors.Wrap"
-	if ${1}err != nil {
-		return errors.Wrap(err, "${2}")
 	}
