@@ -46,11 +46,11 @@ snippet inf "full interface "
 		${2:/* methods */}
 	}
 snippet if "if condition"
-	if (${1:/* condition */}) {
+	if (${1}) {
 		${2:${VISUAL}}
 	}
 snippet ife "if else condition"
-	if (${1:/* condition */}) {
+	if (${1}) {
 		${2:${VISUAL}}
 	} else {
 		${0}
@@ -61,6 +61,11 @@ snippet el "else"
 	else {
 		${0:${VISUAL}}
 	}
+snippet eq ".equals"
+    boolean equals(${1:MyClass} other) {
+		${0:${VISUAL}}
+    }
+snippet f "false"
 snippet f "false"
 	false
 snippet fl "float"
