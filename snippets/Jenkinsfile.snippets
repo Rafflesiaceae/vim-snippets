@@ -138,11 +138,15 @@ snippet psss
 			}
 	}
 	${0}
+snippet s
+	script {
+		${0:${VISUAL}}
+	}
 snippet sss
 	stages {
 		stage('${1:Build}') {
 			steps {
-				sh '${2:make}'
+				${2:${VISUAL}}
 			}
 		}
 	}
@@ -151,7 +155,7 @@ snippet st
 	stage("${1:Foo}") {
 		steps {
 			script {
-				${2:echo "foo"}
+				${2:${VISUAL}}
 			}
 		}
 	}
