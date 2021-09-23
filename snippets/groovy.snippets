@@ -74,13 +74,11 @@ snippet th "throw an exception"
 	throw new ${1:Exception}(${2:${VISUAL}})
 snippet throw "throw an exception"
 	throw new ${1:Exception}(${2:${VISUAL}})
-snippet try "try catch finally"
+snippet try "try catch"
 	try {
 		${1}
-	} catch ( ${2:IOException | NullPointerException e} ) {
+	} catch ( ${2:Exception e} ) {
 		${3}
-	} finally {
-		${4}
 	}
 snippet fun "function"
 	func ${1:funcName}(${2}) ${3:error} {
