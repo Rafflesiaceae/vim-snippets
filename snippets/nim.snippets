@@ -1,0 +1,175 @@
+snippet bl "Boolean"
+	Boolean
+snippet bt "byte"
+	byte
+snippet br "break"
+	break
+snippet cs "CompileStatic"
+	@CompileStatic
+snippet tc "TupleConstructor"
+	@TupleConstructor
+snippet cn "continue"
+	continue
+snippet else "else"
+	else:
+snippet if "if condition"
+	if ${1}:
+	  ${2:${VISUAL}}
+snippet ife "if else condition"
+	if ${1}:
+		${2:${VISUAL}}
+	else:
+		${0}
+snippet el "else"
+	else:
+	  ${0:${VISUAL}}
+snippet enum "enum"
+	${1}${2:* \{.pure.\}} = enum
+	  ${0:${VISUAL}}
+snippet exc "new exception"
+	@InheritConstructors
+	class ${0:FooException} extends Exception {}
+snippet f "false"
+	false
+snippet fl "float"
+	float32
+snippet f3 "float32"
+	float32
+snippet f6 "float64"
+	float64
+snippet while "while loop"
+	while ${1:true}:
+	  ${0:${VISUAL}}
+# @XXX not supported with the groovy in the latest Jenkins version
+# snippet for "for int loop"
+# 	for (${1:i} = 0, ${2:len} = ${3:FOO.length()}; $1 < $2; $1${4:++}) {
+# 		${0:${VISUAL}}
+# 	}
+# snippet for "for c loop"
+# 	for (${1:i} = 0; $1 < ${2:foo.length()}; $1${4:++}) {
+# 		${0:${VISUAL}}
+# 	}
+snippet fori "for in loop"
+	for ${1:item} in ${2:list}:
+	  ${0:${VISUAL}}
+snippet im "import"
+	import ${1}
+snippet int "interface"
+	interface ${1:FooBar} {
+		${0:${VISUAL}}
+		int foo()
+		void bar()
+	}
+snippet raise "raise an exception"
+	raise newException(${1:Exception}, "${2:error}")
+snippet throw "throw an exception"
+	throw new ${1:Exception}(${2:${VISUAL}})
+snippet try "try catch finally"
+	try:
+		${1:${VISUAL}}
+	except Exception as e:
+		${2:discard}
+snippet ty "type"
+	type
+	  ${1} = ${2:ref object}
+	    ${3:${VISUAL}}
+snippet fun "function"
+	func ${1:funcName}(${2}) ${3:error} {
+		${4}
+	}
+	${0}
+snippet fum "method"
+	func (${1:receiver} ${2:type}) ${3:funcName}(${4}) ${5:error} {
+		${6}
+	}
+	${0}
+snippet fumh "http handler function on receiver"
+	func (${1:receiver} ${2:type}) ${3:funcName}(${4:w} http.ResponseWriter, ${5:r} *http.Request) {
+		${0:${VISUAL}}
+	}
+snippet l "list"
+	List<${1:String}>
+snippet main "func main()"
+	import os
+
+	proc main =
+		let args = commandLineParams()
+		let selfName = getAppFilename()
+		${0:${VISUAL}}
+
+	when isMainModule:
+		main()
+# snippet nw "new"
+# 	new ${0:Class}(${1})
+snippet new "new"
+	proc new$1${2:*}(${3}): ${1:Object} =
+	  new(result)
+	  ${0:${VISUAL}}
+snippet pa "package"
+	package ${1:main}
+snippet rt "return"
+	return ${0}
+snippet rs "result"
+	result
+snippet sd "static def"
+	static def ${1:foo}(${2:String contents}) {
+		${0:${VISUAL}}
+	}
+snippet spd "static protected def"
+	static protected def ${1:foo}(${2:String contents}) {
+		${0:${VISUAL}}
+	}
+snippet sr "String"
+	String
+snippet st "Object"
+	type
+		${1:BinaryTree}* = ref object
+			f: float64
+snippet switch "switch"
+	switch (${1:var}) {
+	case ${2:value1}:
+		break;
+	case [ ${3:1, 2} ]:
+		break;
+	default:
+		${0:${VISUAL}}
+		break;
+	}
+snippet t "true"
+	true
+snippet test "test function"
+	func Test${1:name}(t *testing.T) {
+		${0:${VISUAL}}
+	}
+snippet testt "table test function"
+	func Test${1:name}(t *testing.T) {
+		tests := []struct {
+			name string
+		}{
+			{
+				name: "${2:test name}",
+			},
+		}
+
+		for _, test := range tests {
+			t.Run(test.name, func(t *testing.T) {
+				${0:${VISUAL}}
+			})
+		}
+	}
+snippet bench "benchmark function"
+	func Benchmark${1:name}(b *testing.B) {
+		for i := 0; i < b.N; i++ {
+			${2}
+		}
+	}
+	${0}
+snippet cl "class"
+	class ${1:Name} {
+		${2:${VISUAL}}
+	}
+snippet jcl "jenkins class"
+	@TupleConstructor
+	class ${1:Name} {
+		${2:${VISUAL}}
+	}
