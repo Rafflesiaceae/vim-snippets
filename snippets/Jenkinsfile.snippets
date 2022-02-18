@@ -164,21 +164,18 @@ snippet parameters
 		${1}
 	}
 	${0}
+snippet paramstring
+	string(name: "${1:name}", defaultValue: "", description: "${2:description}", trim: true)
 snippet paramtext
-		text(name: "${1:BIOGRAPHY}" , defaultValue: "${2:default}" , description: "${3:Enter some information about the person}")
-		${0}
+	text(name: "${1:BIOGRAPHY}" , defaultValue: "${2:default}" , description: "${3:Enter some information about the person}")
 snippet parambool
-		booleanParam(name: "${1:TOGGLE}" , defaultValue: ${2:default}, description: "${3:Toggle this value}")
-		${0}
+	booleanParam(name: "${1:TOGGLE}" , defaultValue: ${2:default}, description: "${3:Toggle this value}")
 snippet paramchoice
-		choice(name: "${1:CHOICE}" , choices: ["${2:Choices}",] , description: "${3:Pick something}")
-		${0}
+	choice(name: "${1:CHOICE}" , choices: ["${2:Choices}",] , description: "${3:Pick something}")
 snippet parampassword
-		password(name: "${1:PASSWORD}" , defaultValue: "${2:SECRET}" , description: "${3:Enter a password}")
-		${0}
+	password(name: "${1:PASSWORD}" , defaultValue: "${2:SECRET}" , description: "${3:Enter a password}")
 snippet paramfile
-		file(name: "${1:FILE}" , description: "${2:Choose a file to upload}")${0}
-		${0}
+	file(name: "${1:FILE}" , description: "${2:Choose a file to upload}")${0}
 snippet triggers
 	triggers {
 		cron('${1:H */4 * * 1-5}')
