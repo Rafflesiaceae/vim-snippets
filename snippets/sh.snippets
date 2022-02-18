@@ -29,7 +29,11 @@ snippet for
 		${0:${VISUAL}}
 	done
 snippet fori
-	for ${1:needle} in ${2:haystack} ; do
+	for ${1:el} in ${2:var} ; do
+		${0:${VISUAL}}
+	done
+snippet fora
+	for ${1:el} in "\${${2:var}[@]}" ; do
 		${0:${VISUAL}}
 	done
 snippet wh
