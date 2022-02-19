@@ -4,6 +4,14 @@ snippet bt "byte"
 	byte
 snippet br "break"
 	break
+snippet case "case"
+	case ${1:myvar}
+	of ${2:"some"}:
+	  ${3:discard}
+	elif ${4:true}: ${5:echo "empty" # optional, must come after *of* branches}
+	else:
+	  ${6:raise newException(Exception, "unknown case")}
+
 snippet cs "CompileStatic"
 	@CompileStatic
 snippet tc "TupleConstructor"
