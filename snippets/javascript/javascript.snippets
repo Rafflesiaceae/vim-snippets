@@ -309,6 +309,10 @@ snippet clac
 			${0:${VISUAL}}
 		}
 	}
+snippet fore "for (const [k, v] of Object.entries(object)}) { ... }"
+	for (const [${1:k, v}] of Object.entries(${2:object})) {
+		${0:$1}
+	}
 snippet foro "for (const prop of object}) { ... }"
 	for (const ${1:prop} of ${2:object}) {
 		${0:$1}
