@@ -64,6 +64,10 @@ snippet df
 		registryUrl '${4:https://myregistry.com/}'
 		registryCredentialsId '${5:myPredefinedCredentialsInJenkins}'
 	}
+snippet disable "disable stage"
+	when {
+		expression { false }
+	}
 snippet pa
 	post {
 		always {
