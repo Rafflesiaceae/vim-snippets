@@ -12,8 +12,15 @@ snippet if
 	if [ ${1:condition} ]; then
 		${0:${VISUAL}}
 	fi
+snippet ifn
+	if ${1:condition}; then
+		${0:${VISUAL}}
+	fi
 snippet elif
 	elif [ ${1:condition} ]; then
+		${0:${VISUAL}}
+snippet elifn
+	elif ${1:condition}; then
 		${0:${VISUAL}}
 snippet for
 	for (( ${2:i} = 0; $2 < ${1:count}; $2++ )); do
@@ -27,12 +34,12 @@ snippet fora
 	for ${1:el} in "\${${2:var}[@]}" ; do
 		${0:${VISUAL}}
 	done
-snippet wh
-	while [[ ${1:condition} ]]; do
+snippet while
+	while [ ${1:condition} ]; do
 		${0:${VISUAL}}
 	done
-snippet while
-	while [[ ${1:condition} ]]; do
+snippet whilen
+	while ${1:condition}; do
 		${0:${VISUAL}}
 	done
 snippet whilet "while true"
@@ -40,7 +47,11 @@ snippet whilet "while true"
 		${0:${VISUAL}}
 	done
 snippet until
-	until [[ ${1:condition} ]]; do
+	until [ ${1:condition} ]; do
+		${0:${VISUAL}}
+	done
+snippet untiln
+	until ${1:condition}; do
 		${0:${VISUAL}}
 	done
 snippet case
