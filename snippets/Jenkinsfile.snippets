@@ -156,7 +156,11 @@ snippet sss
 	}
 	${0}
 snippet st
-	stage("${1:Foo}") {
+	stage('${1:Foo}') {
+		${2:${VISUAL}}
+	}
+snippet std
+	stage('${1:Foo}') {
 		steps {
 			script {
 				${2:${VISUAL}}
